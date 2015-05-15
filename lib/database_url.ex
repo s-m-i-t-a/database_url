@@ -1,0 +1,2 @@
+defmodule DatabaseUrl do
+end
