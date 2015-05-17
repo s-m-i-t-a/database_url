@@ -28,4 +28,10 @@ defmodule DatabaseUrlTest do
     |> Enum.all?(fn {url, adapter} -> Keyword.get(parse(url), :adapter) == adapter end)
   end
 
+  test "should contain port if is present" do
+    url = "postgres://localhost:1234/database"
+
+    assert Keyword.get(parse(url), :port) == 1234
+  end
+
 end

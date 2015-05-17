@@ -1,7 +1,5 @@
 defmodule DatabaseUrl do
 
-  import URI
-
   @adapters %{
     "postgres" => Ecto.Adapters.Postgres,
     "mysql" => Ecto.Adapters.MySQL
@@ -11,11 +9,23 @@ defmodule DatabaseUrl do
     process URI.parse(url)
   end
 
-  defp process(%{scheme: scheme, host: host, path: "/" <> database}) do
+  defp process(%{
+    scheme: scheme,
+    host: host,
+    path: "/" <> database,
+    port: port
+  }) do
     [
       host: host,
       database: database,
       adapter: @adapters[scheme]
     ]
+    ++ port(port)
   end
+
+  defp port(nil), do: []
+  defp port(port) do
+    [port: port]
+  end
+
 end
