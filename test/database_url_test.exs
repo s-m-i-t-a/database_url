@@ -71,4 +71,13 @@ defmodule DatabaseUrlTest do
     assert not Keyword.has_key?(parsed_url, :username)
     assert not Keyword.has_key?(parsed_url, :password)
   end
+
+  test "should query params used as key and value result keywords list" do
+    url = "postgres://localhost/database?size=30&ssl=true&encoding=utf-8"
+
+    parsed_url = parse(url)
+    assert Keyword.get(parsed_url, :size) == 30
+    assert Keyword.get(parsed_url, :ssl) == true
+    assert Keyword.get(parsed_url, :encoding) == "utf-8"
+  end
 end
