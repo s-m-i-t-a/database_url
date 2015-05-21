@@ -1,0 +1,9 @@
+# Config file for automatic testing at travis-ci.org
+
+language: elixir
+
+otp_release:
+  - 17.4
+
+after_success:
+    - "mix compile && mix coveralls.travis"
