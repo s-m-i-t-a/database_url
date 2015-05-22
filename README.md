@@ -1,6 +1,6 @@
 # DatabaseUrl
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/91fb642e-351c-40c4-a0d4-7c45e4e0f7bf/431905/badge.svg)](https://semaphoreci.com/smita/database_url)
+[![Build Status](https://semaphoreci.com/api/v1/projects/91fb642e-351c-40c4-a0d4-7c45e4e0f7bf/431905/shields_badge.svg)](https://semaphoreci.com/smita/database_url)
 [![Coverage Status](https://coveralls.io/repos/s-m-i-t-a/database_url/badge.svg?branch=master)](https://coveralls.io/r/s-m-i-t-a/database_url?branch=master)
 
 Parse database URL and renturn keyword list for use with Ecto.
