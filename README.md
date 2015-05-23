@@ -32,6 +32,11 @@ end
 Use in project config and assume `DATABASE_URL` environment variable is set.
 
 ```elixir
+Code.require_file("../deps/database_url/lib/database_url.ex", __DIR__)
+
 # Configure your database
 config :myapp, MyApp.Repo, DatabaseUrl.parse(System.get_env("DATABASE_URL"))
 ```
+
+On first line in `config.exs` must be added `Code.require_file("../deps/database_url/lib/database_url.ex", __DIR__)`,
+otherwise isn't module loaded.
