@@ -31,7 +31,10 @@ defmodule DatabaseUrl.MixProject do
   #
   # Type `mix help deps` for more examples and options
   defp deps() do
-    [{:excoveralls, "~> 0.18", only: [:dev, :test]}]
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.18", only: [:dev, :test]}
+    ]
   end
 
   defp package() do
