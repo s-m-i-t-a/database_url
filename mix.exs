@@ -1,10 +1,10 @@
-defmodule DatabaseUrl.Mixfile do
+defmodule DatabaseUrl.MixProject do
   use Mix.Project
 
-  def project do
+  def project() do
     [app: :database_url,
-     version: "0.1.0",
-     elixir: "~> 1.0",
+     version: "0.1.1",
+     elixir: "~> 1.14",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
@@ -17,7 +17,7 @@ defmodule DatabaseUrl.Mixfile do
   # Configuration for the OTP application
   #
   # Type `mix help compile.app` for more information
-  def application do
+  def application() do
     [applications: []]
   end
 
@@ -30,11 +30,11 @@ defmodule DatabaseUrl.Mixfile do
   #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
   #
   # Type `mix help deps` for more examples and options
-  defp deps do
-    [{:excoveralls, "~> 0.3", only: [:dev, :test]}]
+  defp deps() do
+    [{:excoveralls, "~> 0.18", only: [:dev, :test]}]
   end
 
-  defp package do
+  defp package() do
     [
       files:        ["lib", "mix.exs", "README*", "LICENSE*"],
       contributors: ["Jindrich K. Smitka <smitka.j@gmail.com>"],
